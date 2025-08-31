@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg: #0A0F1F;
+    --glass: rgba(255,255,255,0.06);
+    --stroke: rgba(255,255,255,0.18);
+    --custom-light: #F5F5F5;
+    --custom-teal: #307D7E;
+    --teal-glass: rgba(48, 125, 126, 0.1);
+    --teal-stroke: rgba(48, 125, 126, 0.3);
+    --new-bg: linear-gradient(135deg, #F5F5F5 0%, #E8F4F4 50%, #D1E7E7 100%);
+    --dark-text: #2D2D2D;
+  }
+  html, body, #root { height: 100%; }
+  body { 
+    background: var(--new-bg);
+    color: var(--dark-text);
+    font-family: 'Inter', ui-sans-serif, system-ui;
+  }
+}
+
+/* Glass card helper - updated for light theme */
+.glass {
+  background: rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(48, 125, 126, 0.2);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  border-radius: 1.25rem;
+  box-shadow: 0 4px 6px -1px rgba(48, 125, 126, 0.1);
+}
+
+/* Teal glass variant */
+.glass-teal {
+  background: rgba(48, 125, 126, 0.15);
+  border: 1px solid var(--custom-teal);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  border-radius: 1.25rem;
+  box-shadow: 0 4px 6px -1px rgba(48, 125, 126, 0.2);
+}
+
+/* Neon gradient text */
+.neon-gradient {
+  background: linear-gradient(90deg, #00F5FF, #8B00FF, #DA00FF);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes pulseGlow {
+  0%,100% { box-shadow: 0 0 0 0 rgba(0,245,255,.25); }
+  50% { box-shadow: 0 0 40px 0 rgba(0,245,255,.35); }
+}
+
+@keyframes cube-rotate {
+  0% { transform: rotateX(0deg) rotateY(0deg); }
+  100% { transform: rotateX(360deg) rotateY(360deg); }
+}
+@keyframes shine {
+  0% { transform: translateX(-120%); }
+  100% { transform: translateX(120%); }
+}
+@keyframes subtle-pop {
+  0% { transform: scale(.98); }
+  100% { transform: scale(1); }
+}
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
